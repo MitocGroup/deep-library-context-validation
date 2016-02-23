@@ -1,6 +1,6 @@
 import DeepFramework from 'deep-framework';
 
-export default class DeepContextValidation extends DeepFramework.Core.AWS.Lambda.Runtime {
+export class DeepContextValidation extends DeepFramework.Core.AWS.Lambda.Runtime {
   constructor(...args) {
     super(...args);
 
