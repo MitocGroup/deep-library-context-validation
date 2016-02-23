@@ -1,5 +1,5 @@
 {
-  "name": "deep-mg-lib-context-validation",
+  "name": "deep-library-context-validation",
   "version": "0.0.1",
   "description": "Check if user from context have permission to access account sent in request",
   "main": "index.js",
