@@ -26,7 +26,7 @@ export class DeepContextValidation extends DeepFramework.Core.AWS.Lambda.Runtime
         throw new DeepFramework.Core.Exception.DatabaseOperationException(error);
       }
 
-      if (account.Users.indexOf(userId) === -1) {
+      if (!account || account.Users.indexOf(userId) === -1) {
         return this.createError('You don\'t have permissions for this account').send();
       }
 
