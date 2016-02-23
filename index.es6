@@ -4,8 +4,8 @@ export default class DeepContextValidation extends DeepFramework.Core.AWS.Lambda
   constructor(...args) {
     super(...args);
 
-    this.Account = DeepFramework.Kernel.get('db').get('Account');
-    this.isLocal = this.kernel.get('fs').localBackend;
+    this.Account = this.kernel.get('db').get('Account');
+    this.isLocal = DeepFramework.Core.IS_DEV_SERVER;
   }
 
   /**

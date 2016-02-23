@@ -2,7 +2,7 @@
   "name": "deep-mg-lib-context-validation",
   "version": "0.0.1",
   "description": "Check if user from context have permission to access account sent in request",
-  "main": "index.es6",
+  "main": "index.js",
   "scripts": {
     "postinstall": "npm run compile",
     "compile": "deepify compile-es6 `pwd`"
@@ -11,7 +11,7 @@
     "deep"
   ],
   "author": "Scripnic Alexandru <ascripnic@mitocgroup.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "deep-framework": "1.7.*"
   }
