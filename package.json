@@ -1,0 +1,18 @@
+{
+  "name": "deep-library-context-validation",
+  "version": "0.0.1",
+  "description": "Check if user from context have permission to access account sent in request",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run compile",
+    "compile": "deepify compile-es6 `pwd`"
+  },
+  "keywords": [
+    "deep"
+  ],
+  "author": "Scripnic Alexandru <ascripnic@mitocgroup.com>",
+  "license": "MIT",
+  "dependencies": {
+    "deep-framework": "1.7.*"
+  }
+}
