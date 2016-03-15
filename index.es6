@@ -10,10 +10,11 @@ export class DeepContextValidation extends DeepFramework.Core.AWS.Lambda.Runtime
 
   /**
    * Check if user have permissions to access a specific account
-   * @param accountId
-   * @param callback
+   * @param {String} accountId
+   * @param {Function} callback
+   * @param {Boolean} isOwner
    */
-  contextValidation(accountId, callback) {
+  contextValidation(accountId, callback, isOwner = false) {
     if (this.isLocal) {
       return callback();
     }
@@ -24,6 +25,10 @@ export class DeepContextValidation extends DeepFramework.Core.AWS.Lambda.Runtime
       if (error) {
 
         throw new DeepFramework.Core.Exception.DatabaseOperationException(error);
+      }
+
+      if (isOwner && account.OwnerId !== userId) {
+        return this.createError('You don\'t have permissions for this action on this account').send();
       }
 
       if (!account || account.Users.indexOf(userId) === -1) {
